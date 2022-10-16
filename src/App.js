@@ -6,6 +6,7 @@ function App() {
   const [Task,setTask] = useState([{Task:'la premiere tache', status : false}]);
   let barre = 'barre'
   let nonBarre = 'nonBarre'
+  let tache = 'tache'
  
 
   return (
@@ -18,7 +19,7 @@ function App() {
       <div >
         {
           Task.map(el =>(
-              <div className='tache'  >
+              <div className={tache}  >
                   <input type = 'checkbox'  onChange={()=> {
                     setTask([...Task.map(num =>
                       num.Task === el.Task ? {...num, status : !num.status} : num)])    
@@ -26,10 +27,7 @@ function App() {
                   }}/>
                   <p className={el.status === true ?  barre :  nonBarre}>{el.Task}</p>
                   <button onClick={()=> {
-                    setTask([...Task.map(x =>
-                      x.Task === el.Task ? Task.pop() : x)])
-                        
-                    console.log(Task)
+                    setTask([...Task.filter(x => (x.Task !== el.Task))])
                   }}>*</button>
               </div>
           ))
