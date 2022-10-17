@@ -28,7 +28,7 @@ function App() {
                   <p className={el.status === true ?  barre :  nonBarre}>{el.Task}</p>
                   <button onClick={()=> {
                     setTask([...Task.filter(x => (x.Task !== el.Task))])
-                  }}>*</button>
+                  }}><i class="fa-regular fa-trash-can"></i></button>
               </div>
           ))
           }
