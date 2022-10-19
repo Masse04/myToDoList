@@ -8,10 +8,6 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.nonBarre{
-  
-  /*color :red;*/
-}
 .barre{
   text-decoration: line-through;
   color : blue;
@@ -21,4 +17,6 @@ background-color: #282c34;
 }
 button{
   border : none ;
+  width: 2rem;
+  height: 1.5rem;
 }
